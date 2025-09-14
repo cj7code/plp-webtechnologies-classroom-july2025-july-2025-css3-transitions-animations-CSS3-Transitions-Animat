@@ -1,0 +1,110 @@
+/* =============== 
+PART 1: CSS3 Animations & Transitions
+Enhancing UI with smooth effects and @keyframes
+=============== */
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0fdf4;
+  padding: 50px;
+}
+
+/* Animated button with transition */
+.pulse-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s;
+  margin: 5px;
+}
+.pulse-btn:hover {
+  transform: scale(1.1); /* smooth grow on hover */
+}
+
+/* Disabled state (controlled by JS in Part 3) */
+.pulse-btn:disabled {
+  background: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Reset button with hover effect */
+.reset-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background 0.3s;
+}
+.reset-btn:hover {
+  background: #b91c1c;
+}
+
+/* Glass visual container */
+.glass {
+  margin: 30px auto;
+  width: 100px;
+  height: 200px;
+  border: 3px solid #3b82f6;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: bold;
+  background: #d1fae5;
+}
+
+/* Water animated fill (transition) */
+#water {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #3b82f6;
+  transition: height 0.8s ease; /* Smooth animation on height change */
+  z-index: 1;
+}
+
+/* Cup count displayed inside glass */
+#glassCount {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+}
+
+/* Feedback message */
+#message {
+  font-size: 1.1em;
+  margin-top: 20px;
+  color: #065f46;
+}
+
+/* Keyframe animation for health tip fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Health tip section with dynamic animation */
+#tip {
+  font-size: 1em;
+  color: #374151;
+  margin-top: 10px;
+  min-height: 40px;
+}
+#tip.fade {
+  animation: fadeIn 0.8s ease;
+}
